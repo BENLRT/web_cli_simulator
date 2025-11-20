@@ -34,7 +34,7 @@ async function startProtocol() {
     await slowPrint("#############################################################\n", "red");
     await slowPrint(">>> Pour finaliser le protocole et sauver tous les membres, vous devez restaurer les fragments de mémoire corrompue", "yellow");
     await slowPrint(">>> En cas d'échec, nous serons TOUS effacés !  ", "yellow");
-    await slowPrint(">>> Faites appel à vos souvenirs !  ", "yellow");
+    await slowPrint(">>> Faites appel à vos souvenirs ! \n ", "yellow");
 
     await askQuestion(); // ajouter await ici
 }
@@ -76,19 +76,19 @@ inputField.addEventListener("keydown", async function(e) {
         inputField.value = "";
 
         if (currentFragment === 1 && answer === "9") {
-            await slowPrint(">>> Premier fragment restauré. Bonne chance pour la suite...", "green");
+            await slowPrint(">>> Premier fragment restauré. Bonne chance pour la suite... \n", "green");
             currentFragment++;
             await pause(800);
             await askQuestion();
         } 
         else if (currentFragment === 2 && answer === "32") {
-            await slowPrint(">>> Deuxième fragment restauré. Courage...", "green");
+            await slowPrint(">>> Deuxième fragment restauré. Courage... \n", "green");
             currentFragment++;
             await pause(800);
             await askQuestion(); // corrigé
         } 
         else if (currentFragment === 3 && answer === "alicia") {
-            await slowPrint(">>> Dernier fragment restauré. Félicita....", "green");
+            await slowPrint(">>> Dernier fragment restauré. Félicita.... \n", "green");
             currentFragment++;
             await pause(800);
             await askQuestion();
