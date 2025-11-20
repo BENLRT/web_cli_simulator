@@ -18,11 +18,17 @@ function slowPrint(text, color = "") {
 
 async function startProtocol() {
     await slowPrint(">>> Connexion au centre de contrôle...", "cyan");
+    await slowPrint(">>> ...", "cyan");
+    await slowPrint(">>>  ...", "cyan");
     await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\", "red");
-    await slowPrint("##############################################################", "red");
-    await slowPrint("#####    PROTOCOLE D'URGENCE ENCLENCHÉ    #####", "red");
-    await slowPrint("##############################################################\n", "red");
-
+    await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\", "red");
+    await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\", "red");
+    await slowPrint("###############################################################", "red");
+    await slowPrint("###############  PROTOCOLE D'URGENCE ENCLENCHÉ  ###############", "red");
+    await slowPrint("###############################################################\n", "red");
+    await slowPrint(">>> Pour finaliser le protocole et sauver tous les membres, vous devez restaurer les fragments de mémoire corrompue", "yellow");
+    await slowPrint(">>> En cas d'échec, nous serons TOUS effacés !  ", "yellow");
+    await slowPrint(">>> Faites appel à vos souvenirs !  ", "yellow");
     await slowPrint(">>> Fragment 1. Combien de personnes avez-vous libérées ? ", "yellow");
 }
 
@@ -37,5 +43,8 @@ inputField.addEventListener("keydown", function(e) {
         inputField.value = "";
 
         // Ici tu peux vérifier les réponses comme en Python
+
+        if (answer === "9") {
+
     }
 });
