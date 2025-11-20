@@ -47,5 +47,4 @@ inputField.addEventListener("keydown", function(e) {
         if (answer === "9") {
 
     }
-}
-);
+};
