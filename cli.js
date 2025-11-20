@@ -62,8 +62,12 @@ async function displaySSD() {
     await slowPrint(">>> J'ai besoin d'un nouveau module pour stocker ces fragments..", "yellow");
     await slowPrint(">>> Trouvez le module manquant en éclairant ce qui ne peut être vu.. ", "yellow");
 
-    // afficher SSD ligne par ligne
-    await slowPrint("SSD", "black-bg");  
+    // Affichage SSD
+    const ssdBlock = document.createElement("pre");
+    ssdBlock.className = "black-bg";
+    ssdBlock.textContent = "SSD";  // ton mot "SSD"
+    terminal.appendChild(ssdBlock);
+    terminal.innerHTML += "\n";
 
     await slowPrint(">>> Entrez le nom du module manquant dans le #centre-de-commande.", "yellow");
 }
