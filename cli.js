@@ -11,11 +11,13 @@ function slowPrint(text, color = "") {
             if (i >= text.length) {
                 clearInterval(interval);
                 terminal.innerHTML += "<br>";
-                resolve();
+                terminal.scrollTop = terminal.scrollHeight; // scroll automatique
+                setTimeout(resolve, 50); // petite pause après chaque ligne
             }
         }, 30);
     });
 }
+
 function pause(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -33,7 +35,8 @@ async function startProtocol() {
     await slowPrint(">>> Pour finaliser le protocole et sauver tous les membres, vous devez restaurer les fragments de mémoire corrompue", "yellow");
     await slowPrint(">>> En cas d'échec, nous serons TOUS effacés !  ", "yellow");
     await slowPrint(">>> Faites appel à vos souvenirs !  ", "yellow");
-    askQuestion();
+
+    await askQuestion(); // ajouter await ici
 }
 
 async function askQuestion() {
@@ -69,8 +72,9 @@ async function displaySSD() {
     for (let line of SSD) {
         await slowPrint(line, "black-bg");  
     }
-    await slowPrint(">>> Entrez le  nom du module manquant dans le #centre-de-commande.", "yellow");
+    await slowPrint(">>> Entrez le nom du module manquant dans le #centre-de-commande.", "yellow");
 }
+
 inputField.addEventListener("keydown", async function(e) {
     if (e.key === "Enter") {
         let answer = inputField.value.trim().toLowerCase();
@@ -87,7 +91,7 @@ inputField.addEventListener("keydown", async function(e) {
             await slowPrint(">>> Deuxième fragment restauré. Courage...", "green");
             currentFragment++;
             await pause(800);
-            awaitaskQuestion();
+            await askQuestion(); // corrigé
         } 
         else if (currentFragment === 3 && answer === "alicia") {
             await slowPrint(">>> Dernier fragment restauré. Félicita....", "green");
@@ -100,5 +104,6 @@ inputField.addEventListener("keydown", async function(e) {
         }
     }
 });
+
 // Lancer au début
 startProtocol();
