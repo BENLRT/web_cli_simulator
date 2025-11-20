@@ -70,32 +70,32 @@ async function displaySSD() {
     }
     await slowPrint(">>> Entrez le  nom du module manquant dans le #centre-de-commande.", "yellow");
 }
-inputField.addEventListener("keydown", function(e) {
+inputField.addEventListener("keydown", async function(e) {
     if (e.key === "Enter") {
         let answer = inputField.value.trim().toLowerCase();
         terminal.innerHTML += ">>> " + answer + "\n";
         inputField.value = "";
 
         if (currentFragment === 1 && answer === "9") {
-            slowPrint(">>> Premier fragment restauré. Bonne chance pour la suite...", "green");
+            await slowPrint(">>> Premier fragment restauré. Bonne chance pour la suite...", "green");
             currentFragment++;
-            pause(800);
-            setTimeout(askQuestion, 1000);
+            await pause(800);
+            askQuestion();
         } 
         else if (currentFragment === 2 && answer === "32") {
-            slowPrint(">>> Deuxième fragment restauré. Courage...", "green");
+            await slowPrint(">>> Deuxième fragment restauré. Courage...", "green");
             currentFragment++;
-            pause(800);
-            setTimeout(askQuestion, 1000);
+            await pause(800);
+            askQuestion();
         } 
         else if (currentFragment === 3 && answer === "alicia") {
-            slowPrint(">>> Dernier fragment restauré. Félicita....", "green");
+            await slowPrint(">>> Dernier fragment restauré. Félicita....", "green");
             currentFragment++;
-            pause(800);
-            setTimeout(askQuestion, 1000);
+            await pause(800);
+            askQuestion();
         } 
         else {
-            slowPrint(">>> Mauvaise réponse. Veuillez recommencer.", "red");
+            await slowPrint(">>> Mauvaise réponse. Veuillez recommencer.", "red");
         }
     }
 });
