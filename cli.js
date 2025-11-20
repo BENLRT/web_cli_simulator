@@ -28,7 +28,7 @@ async function startProtocol() {
     await slowPrint(">>>  ...", "cyan");
     await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\", "red");
     await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\", "red");
-    await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\", "red");
+    await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\ \n", "red");
     await slowPrint("#############################################################", "red");
     await slowPrint("###############  PROTOCOLE D'URGENCE ENCLENCHÉ  ###############", "red");
     await slowPrint("#############################################################\n", "red");
@@ -58,7 +58,7 @@ async function askQuestion() {
 
 async function displaySSD() {
     await pause(800);
-    await slowPrint("/!\\ ALERTE : Mémoire instable !! /!\\", "red");
+    await slowPrint("/!\\ ALERTE : Mémoire instable !! /!\\ \n", "red");
     await slowPrint(">>> J'ai besoin d'un nouveau module pour stocker ces fragments..", "yellow");
     await slowPrint(">>> Trouvez le module manquant en éclairant ce qui ne peut être vu.. ", "yellow");
 
@@ -82,7 +82,7 @@ inputField.addEventListener("keydown", async function(e) {
             await askQuestion();
         } 
         else if (currentFragment === 2 && answer === "32") {
-            await slowPrint(">>> Deuxième fragment restauré. Courage... ", "green");
+            await slowPrint(">>> Deuxième fragment restauré. Courage... \n", "green");
             currentFragment++;
             await pause(800);
             await askQuestion(); // corrigé
@@ -94,7 +94,7 @@ inputField.addEventListener("keydown", async function(e) {
             await askQuestion();
         } 
         else {
-            await slowPrint(">>> Mauvaise réponse. Veuillez recommencer.", "red");
+            await slowPrint(">>> Mauvaise réponse. Veuillez recommencer. \n", "red");
         }
     }
 });
