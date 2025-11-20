@@ -54,15 +54,6 @@ async function askQuestion() {
     }
 }
 
-const SSD = [
-"       ###       ###       ###       ",
-" #######   #######   #######   #######",
-" #######   #######   #######   #######",
-"       ###       ###       ###       ",
-" #######   #######   #######   #######",
-" #######   #######   #######   #######",
-"       ###       ###       ###       "
-];
 
 
 async function displaySSD() {
@@ -72,9 +63,7 @@ async function displaySSD() {
     await slowPrint(">>> Trouvez le module manquant en éclairant ce qui ne peut être vu.. ", "yellow");
 
     // afficher SSD ligne par ligne
-    for (let line of SSD) {
-        await slowPrint(line, "black-bg");  
-    }
+    await slowPrint("SSD", "black-bg");  
 
     await slowPrint(">>> Entrez le nom du module manquant dans le #centre-de-commande.", "yellow");
 }
