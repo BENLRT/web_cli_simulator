@@ -65,7 +65,7 @@ async function displaySSD() {
     // afficher SSD ligne par ligne
     await slowPrint("SSD", "black-bg");  
 
-    await slowPrint(">>> Entrez le nom du module manquant dans le #centre-de-commande.", "yellow");
+    await slowPrint(">>> Entrez le nom du module manquant sur discord dans le #centre-de-commande.", "yellow");
 }
 
 
