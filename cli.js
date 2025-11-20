@@ -62,12 +62,8 @@ async function displaySSD() {
     await slowPrint(">>> J'ai besoin d'un nouveau module pour stocker ces fragments..", "yellow");
     await slowPrint(">>> Trouvez le module manquant en éclairant ce qui ne peut être vu.. ", "yellow");
 
-    // Affichage SSD
-    const ssdBlock = document.createElement("pre");
-    ssdBlock.className = "black-bg";
-    ssdBlock.textContent = "SSD";  // ton mot "SSD"
-    terminal.appendChild(ssdBlock);
-    terminal.innerHTML += "\n";
+    // afficher SSD ligne par ligne
+    await slowPrint("SSD", "black-bg");  
 
     await slowPrint(">>> Entrez le nom du module manquant dans le #centre-de-commande.", "yellow");
 }
@@ -86,7 +82,7 @@ inputField.addEventListener("keydown", async function(e) {
             await askQuestion();
         } 
         else if (currentFragment === 2 && answer === "32") {
-            await slowPrint(">>> Deuxième fragment restauré. Courage... \n", "green");
+            await slowPrint(">>> Deuxième fragment restauré. Courage... ", "green");
             currentFragment++;
             await pause(800);
             await askQuestion(); // corrigé
