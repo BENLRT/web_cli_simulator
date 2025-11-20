@@ -26,3 +26,8 @@ input {
 .yellow { color: yellow; }
 .green { color: #00ff00; }
 .cyan { color: cyan; }
+.black-bg {
+    color: black;
+    background-color: white;
+    font-family: 'Courier New', monospace;
+}

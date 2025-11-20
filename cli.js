@@ -47,7 +47,25 @@ async function askQuestion() {
         displaySSD();  // si on a fini les questions
     }
 }
+const SSD = [
+" #######   #######    #######  ",
+"#       # #       #  #       # ",
+"#         #          #        #",
+" #######   #######   #        #",
+"        #         #  #        #",
+"#       # #       #  #       # ",
+" #######   #######    #######  "
+];
 
+async function displaySSD() {
+    await slowPrint("/!\\ ALERTE : Mémoire instable !! /!\\", "red");
+    await slowPrint(">>> J'ai besoin d'un nouveau module pour stocker ces fragments..", "yellow");
+    await slowPrint(">>> Trouvez le module manquant en éclairant ce qui ne peut être vu.. ", "yellow");
+    for (let line of SSD) {
+        await slowPrint(line, "black-bg");  
+    }
+    await slowPrint(">>> Entrez le  nom du module manquant dans le #centre-de-commande.", "yellow");
+}
 inputField.addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
         let answer = inputField.value.trim().toLowerCase();
@@ -60,7 +78,7 @@ inputField.addEventListener("keydown", function(e) {
             setTimeout(askQuestion, 1000);
         } 
         else if (currentFragment === 2 && answer === "32") {
-            slowPrint(">>> Deuxième fragment restauré. Courage Agent...", "green");
+            slowPrint(">>> Deuxième fragment restauré. Courage...", "green");
             currentFragment++;
             setTimeout(askQuestion, 1000);
         } 
