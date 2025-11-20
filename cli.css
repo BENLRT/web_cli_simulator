@@ -29,9 +29,9 @@ input {
 .black-bg {
     color: black;              
     background-color: black;    
-    font-family: monospace;
+    font-family: playful;
     transition: color 0.3s;
-    font-size: 40px;   
+    font-size: 80px;   
 }
 
 .black-bg:hover {
