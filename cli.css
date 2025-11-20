@@ -31,7 +31,7 @@ input {
     background-color: black;    
     transition: color 0.3s;
     font-size: 40pt;   
-    font-family: playful;
+    font-family: monospace;
 }
 
 .black-bg:hover {
