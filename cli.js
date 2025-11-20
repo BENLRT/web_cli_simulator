@@ -28,8 +28,8 @@ async function startProtocol() {
     await slowPrint(">>>  ...", "cyan");
     await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\", "red");
     await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\", "red");
-    await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\ \n", "red");
-    await slowPrint("#############################################################", "red");
+    await slowPrint("/!\\ ALERTE : Mémoire insuffisante !! /!\\ ", "red");
+    await slowPrint("\n #############################################################", "red");
     await slowPrint("###############  PROTOCOLE D'URGENCE ENCLENCHÉ  ###############", "red");
     await slowPrint("#############################################################\n", "red");
     await slowPrint(">>> Pour finaliser le protocole et sauver tous les membres, vous devez restaurer les fragments de mémoire corrompue", "yellow");
