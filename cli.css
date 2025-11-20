@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Consolas', monospace;
+    margin: 0;
+    padding: 20px;
+}
+
+#terminal {
+    white-space: pre-line;
+    font-size: 16px;
+    min-height: 90vh;
+}
+
+input {
+    width: 100%;
+    background: black;
+    color: #00ff00;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Consolas', monospace;
+}
+
+.red { color: red; }
+.yellow { color: yellow; }
+.green { color: #00ff00; }
+.cyan { color: cyan; }
