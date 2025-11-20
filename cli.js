@@ -38,18 +38,19 @@ async function startProtocol() {
 
 async function askQuestion() {
     if (currentFragment === 1) {
-        slowPrint(">>> Fragment 1. Combien de personnes avez-vous libérées ? ", "yellow");
+        await slowPrint(">>> Fragment 1. Combien de personnes avez-vous libérées ? ", "yellow");
     } 
     else if (currentFragment === 2) {
-        slowPrint(">>> Fragment 2. De combien de cases avez-vous dû vous déplacer pour sortir Minimoys ? ", "yellow");
+        await slowPrint(">>> Fragment 2. De combien de cases avez-vous dû vous déplacer pour sortir Minimoys ? ", "yellow");
     } 
     else if (currentFragment === 3) {
-        slowPrint(">>> Fragment 3. Quel est le nom du système de défense ? ", "yellow");
+        await slowPrint(">>> Fragment 3. Quel est le nom du système de défense ? ", "yellow");
     } 
     else {
-        displaySSD();  // si on a fini les questions
+        await displaySSD();  // si on a fini les questions
     }
 }
+
 const SSD = [
 " #######   #######    #######  ",
 "#       # #       #  #       # ",
@@ -80,19 +81,19 @@ inputField.addEventListener("keydown", async function(e) {
             await slowPrint(">>> Premier fragment restauré. Bonne chance pour la suite...", "green");
             currentFragment++;
             await pause(800);
-            askQuestion();
+            await askQuestion();
         } 
         else if (currentFragment === 2 && answer === "32") {
             await slowPrint(">>> Deuxième fragment restauré. Courage...", "green");
             currentFragment++;
             await pause(800);
-            askQuestion();
+            awaitaskQuestion();
         } 
         else if (currentFragment === 3 && answer === "alicia") {
             await slowPrint(">>> Dernier fragment restauré. Félicita....", "green");
             currentFragment++;
             await pause(800);
-            askQuestion();
+            await askQuestion();
         } 
         else {
             await slowPrint(">>> Mauvaise réponse. Veuillez recommencer.", "red");
