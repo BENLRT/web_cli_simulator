@@ -11,8 +11,8 @@ function slowPrint(text, color = "") {
             if (i >= text.length) {
                 clearInterval(interval);
                 terminal.innerHTML += "<br>";
-                terminal.scrollTop = terminal.scrollHeight; // scroll automatique
-                setTimeout(resolve, 50); // petite pause après chaque ligne
+                terminal.scrollTop = terminal.scrollHeight; 
+                setTimeout(resolve, 50); 
             }
         }, 30);
     });
@@ -36,7 +36,7 @@ async function startProtocol() {
     await slowPrint(">>> En cas d'échec, nous serons TOUS effacés !  ", "yellow");
     await slowPrint(">>> Faites appel à vos souvenirs ! \n ", "yellow");
 
-    await askQuestion(); // ajouter await ici
+    await askQuestion(); 
 }
 
 async function askQuestion() {
@@ -50,7 +50,7 @@ async function askQuestion() {
         await slowPrint(">>> Fragment 3. Quel est le nom du système de défense ? ", "yellow");
     } 
     else {
-        await displaySSD();  // si on a fini les questions
+        await displaySSD();  
     }
 }
 
@@ -62,7 +62,7 @@ async function displaySSD() {
     await slowPrint(">>> J'ai besoin d'un nouveau module pour stocker ces fragments..", "yellow");
     await slowPrint(">>> Trouvez le module manquant en éclairant ce qui ne peut être vu.. ", "yellow");
 
-    // afficher SSD ligne par ligne
+ 
     await slowPrint("SSD", "black-bg");  
 
     await slowPrint(">>> Entrez le nom du module manquant sur discord dans le #centre-de-commande.", "yellow");
@@ -85,7 +85,7 @@ inputField.addEventListener("keydown", async function(e) {
             await slowPrint(">>> Deuxième fragment restauré. Courage... \n", "green");
             currentFragment++;
             await pause(800);
-            await askQuestion(); // corrigé
+            await askQuestion(); 
         } 
         else if (currentFragment === 3 && answer === "alicia") {
             await slowPrint(">>> Dernier fragment restauré. Félicita.... \n", "green");
@@ -99,5 +99,5 @@ inputField.addEventListener("keydown", async function(e) {
     }
 });
 
-// Lancer au début
+
 startProtocol();
