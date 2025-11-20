@@ -34,17 +34,3 @@ async function startProtocol() {
 
 // Lancer au début
 startProtocol();
-
-// Gestion des réponses
-inputField.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-        let answer = inputField.value.trim().toLowerCase();
-        terminal.innerHTML += `>>> ${answer}\n`;
-        inputField.value = "";
-
-        // Ici tu peux vérifier les réponses comme en Python
-
-        if (answer === "9") {
-
-    }
-};
