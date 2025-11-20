@@ -79,19 +79,19 @@ inputField.addEventListener("keydown", function(e) {
         if (currentFragment === 1 && answer === "9") {
             slowPrint(">>> Premier fragment restauré. Bonne chance pour la suite...", "green");
             currentFragment++;
-            await pause(800);
+            pause(800);
             setTimeout(askQuestion, 1000);
         } 
         else if (currentFragment === 2 && answer === "32") {
             slowPrint(">>> Deuxième fragment restauré. Courage...", "green");
             currentFragment++;
-            await pause(800);
+            pause(800);
             setTimeout(askQuestion, 1000);
         } 
         else if (currentFragment === 3 && answer === "alicia") {
             slowPrint(">>> Dernier fragment restauré. Félicita....", "green");
             currentFragment++;
-            await pause(800);
+            pause(800);
             setTimeout(askQuestion, 1000);
         } 
         else {
