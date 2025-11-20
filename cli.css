@@ -28,6 +28,6 @@ input {
 .cyan { color: cyan; }
 .black-bg {
     color: black;
-    background-color: white;
+    background-color: black;
     font-family: 'Courier New', monospace;
 }
