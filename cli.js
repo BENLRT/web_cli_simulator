@@ -16,6 +16,9 @@ function slowPrint(text, color = "") {
         }, 30);
     });
 }
+function pause(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 async function startProtocol() {
     await slowPrint(">>> Connexion au centre de contrôle...", "cyan");
@@ -58,6 +61,7 @@ const SSD = [
 ];
 
 async function displaySSD() {
+    await pause(800);
     await slowPrint("/!\\ ALERTE : Mémoire instable !! /!\\", "red");
     await slowPrint(">>> J'ai besoin d'un nouveau module pour stocker ces fragments..", "yellow");
     await slowPrint(">>> Trouvez le module manquant en éclairant ce qui ne peut être vu.. ", "yellow");
@@ -75,16 +79,19 @@ inputField.addEventListener("keydown", function(e) {
         if (currentFragment === 1 && answer === "9") {
             slowPrint(">>> Premier fragment restauré. Bonne chance pour la suite...", "green");
             currentFragment++;
+            await pause(800);
             setTimeout(askQuestion, 1000);
         } 
         else if (currentFragment === 2 && answer === "32") {
             slowPrint(">>> Deuxième fragment restauré. Courage...", "green");
             currentFragment++;
+            await pause(800);
             setTimeout(askQuestion, 1000);
         } 
         else if (currentFragment === 3 && answer === "alicia") {
             slowPrint(">>> Dernier fragment restauré. Félicita....", "green");
             currentFragment++;
+            await pause(800);
             setTimeout(askQuestion, 1000);
         } 
         else {
