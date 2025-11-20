@@ -27,7 +27,13 @@ input {
 .green { color: #00ff00; }
 .cyan { color: cyan; }
 .black-bg {
-    color: black;
-    background-color: black;
-    font-family: 'Courier New', monospace;
+    color: black;              /* texte invisible */
+    background-color: black;    /* fond noir */
+    font-family: monospace;
+    transition: color 0.3s;    /* effet de transition */
 }
+
+.black-bg:hover {
+    color: white;              /* texte devient blanc au survol */
+}
+

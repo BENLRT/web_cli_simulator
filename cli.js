@@ -69,11 +69,15 @@ async function displaySSD() {
     await slowPrint("/!\\ ALERTE : Mémoire instable !! /!\\", "red");
     await slowPrint(">>> J'ai besoin d'un nouveau module pour stocker ces fragments..", "yellow");
     await slowPrint(">>> Trouvez le module manquant en éclairant ce qui ne peut être vu.. ", "yellow");
+
+    // afficher SSD ligne par ligne
     for (let line of SSD) {
         await slowPrint(line, "black-bg");  
     }
+
     await slowPrint(">>> Entrez le nom du module manquant dans le #centre-de-commande.", "yellow");
 }
+
 
 inputField.addEventListener("keydown", async function(e) {
     if (e.key === "Enter") {
